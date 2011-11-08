@@ -4,15 +4,16 @@ CLEAN.include("data.db")
 
 desc "Create local db."
 task :db do
-   require "sequel"
+  require "sequel"
 
-   DB = Sequel.connect(ENV['DATABASE_URL'] || "sqlite://data.db")
-   DB.create_table! :entries do
-      primary_key :entry_id
-      DateTime :create_date
-      DateTime :modify_date
-   end 
+  db_url = ENV['DATABASE_URL'] || "sqlite://data.db"
+  ret = Kernel.system("sequel -m ./db/ #{db_url}");
 
-   puts "Database built."
+  if ret
+    puts "Database migrated."
+  else
+    puts "Database migration failed."
+  end
+
+  puts "Database built."
 end
-
