@@ -1,7 +1,8 @@
 source :rubygems
 
-gem "sinatra"
-gem "less"
-gem "sequel"
-gem "sqlite3"
 gem "heroku"
+gem "less"
+gem "rake"
+gem "sequel"
+gem "sinatra"
+gem "sqlite3"
