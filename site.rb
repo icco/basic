@@ -4,11 +4,15 @@
 
 configure do
   set :sessions, true
-  DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://data.db')
+  DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://db/data.db')
 end
 
 get '/' do
   erb :index, :locals => {}
+end
+
+get '/:id' do
+  Entry.filter(:id => params[:id]).first.to_s
 end
 
 post '/' do
