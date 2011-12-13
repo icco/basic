@@ -6,8 +6,12 @@ desc "Create local db."
 task :db do
   require "sequel"
 
-  db_url = ENV['DATABASE_URL'] || "sqlite://data.db"
-  ret = Kernel.system("sequel -m ./db/ #{db_url}");
+  db_url = ENV['DATABASE_URL'] || "sqlite://db/data.db"
+  migrations_dir = "./db/migrations/"
+
+  puts "Migrating from '#{migrations_dir}' into '#{db_url}'."
+
+  ret = Kernel.system("sequel -m #{migrations_dir} #{db_url}");
 
   if ret
     puts "Database migrated."
