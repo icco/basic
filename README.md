@@ -9,3 +9,9 @@ To run your site locally, run `rackup`.
 ## Database Stuff
 
 Add migrations by adding files to `db/migrations/` and then run `rake db` to migrate the db.
+
+## Resources
+
+ * [Sinatra Documentation](http://www.sinatrarb.com/intro)
+ * [Sequel Cheatsheet](http://cheat.errtheblog.com/s/sequel/)
+ * [Sequel Model HowTo](http://sequel.rubyforge.org/rdoc/files/doc/association_basics_rdoc.html)
