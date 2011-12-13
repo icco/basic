@@ -3,21 +3,21 @@
 # @author Nat Welch - https://github.com/icco
 
 configure do
-   set :sessions, true
-   DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://data.db')
+  set :sessions, true
+  DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://data.db')
 end
 
 get '/' do
-   erb :index, :locals => {}
+  erb :index, :locals => {}
 end
 
 post '/' do
-   redirect '/'
+  redirect '/'
 end
 
 get '/style.css' do
-   content_type 'text/css', :charset => 'utf-8'
-   less :style
+  content_type 'text/css', :charset => 'utf-8'
+  less :style
 end
 
 class Entry < Sequel::Model(:entries)
