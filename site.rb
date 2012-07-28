@@ -11,12 +11,12 @@ get '/' do
   erb :index, :locals => {}
 end
 
-get '/style.css' do
+get '/css/style.css' do
   content_type 'text/css', :charset => 'utf-8'
   less :style
 end
 
-get '/:id' do
+get '/id/:id' do
   Entry.filter(:id => params[:id]).first.to_s
 end
 
