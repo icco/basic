@@ -18,5 +18,15 @@ Basic.controllers  do
   #   "Hello world!"
   # end
 
-  
+  get '/' do
+    erb :index, :locals => {}
+  end
+
+  get '/id/:id' do
+    Entry.where(:id => params[:id]).first.to_s
+  end
+
+  post '/' do
+    redirect '/'
+  end
 end
