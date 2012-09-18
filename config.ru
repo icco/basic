@@ -1,7 +1,9 @@
-require 'rubygems'
-require 'bundler'
+#!/usr/bin/env rackup
+# encoding: utf-8
 
-Bundler.require
+# This file can be used to start Padrino,
+# just execute it from the command line.
 
-require './site'
-run Sinatra::Application
+require File.expand_path("../config/boot.rb", __FILE__)
+
+run Padrino.application
