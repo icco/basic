@@ -1,3 +1,12 @@
 #!/usr/bin/env ruby
 
 require 'natstrap'
+
+# Parse prj from command line
+# git init
+# copy in padrino files
+# git commit current changes
+# copy over template files
+# git commit current changes
+# bundle update
+# git commit current changes
