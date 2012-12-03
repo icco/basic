@@ -1,18 +1,10 @@
 # Natstrap
 
-TODO: Write a gem description
+AKA, icco/basic.
+
+This is used to generate a project to work on.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'natstrap'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install natstrap
 
