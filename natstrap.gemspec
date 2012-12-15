@@ -19,4 +19,5 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency "bundler"
   gem.add_runtime_dependency "padrino"
+  gem.add_runtime_dependency "fog"
 end
