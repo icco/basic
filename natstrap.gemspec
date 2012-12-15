@@ -20,4 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "bundler"
   gem.add_runtime_dependency "padrino"
   gem.add_runtime_dependency "fog"
+
+  gem.rdoc_options = ['--charset=UTF-8']
+  gem.licenses = ['MIT']
 end
