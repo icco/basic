@@ -4,7 +4,15 @@ AKA, icco/basic.
 
 This is used to generate a project to work on.
 
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/icco/basic)
+## Links
+
+* [Travis][]: [![Build Status](https://secure.travis-ci.org/icco/basic.png?branch=master)][travis]
+* [Gemnasium][]: [![Dependency Status](https://gemnasium.com/icco/basic.png?travis)][gemnasium]
+* [Code Climate][]: [![Code Climate](https://codeclimate.com/badge.png)][code climate]
+
+[travis]: http://travis-ci.org/#!/icco/basic
+[gemnasium]: https://gemnasium.com/icco/basic
+[code climate]: https://codeclimate.com/github/icco/basic
 
 ## Installation
 
