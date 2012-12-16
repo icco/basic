@@ -1,15 +1,11 @@
-require 'open-uri'
-require 'thor'
-require 'zipruby'
-
 module Natstrap
 
   # http://whatisthor.com/
   class CLI < Thor
     desc "new name", "Create a project named NAME."
     def new prj_name
-      cmd = "padrino g project #{prj_name} -i -e erb -d activerecord -s jquery -c less"
-      Kernel.system cmd
+
+      Natstrap::Utils.create_padrino prj_name
 
       FileUtils.cd(prj_name, :verbose => true)
 

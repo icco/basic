@@ -1,5 +1,9 @@
+
+require 'open-uri'
+require 'thor'
+require 'zipruby'
+
+
 require "natstrap/version"
 require "natstrap/cli"
-
-module Natstrap
-end
+require "natstrap/utils"
