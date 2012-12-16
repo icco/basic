@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "fog"
   gem.add_runtime_dependency "padrino"
   gem.add_runtime_dependency "thor"
+  gem.add_runtime_dependency "zipruby"
 
   gem.rdoc_options = ['--charset=UTF-8']
   gem.licenses = ['MIT']
