@@ -7,5 +7,5 @@ require "natstrap/cli"
 require "natstrap/utils"
 
 module Natstrap
-  DEV = true
+  DEV = false
 end
