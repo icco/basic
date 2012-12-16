@@ -1,8 +1,33 @@
 module Natstrap
   class Utils
+
+    # Based off of https://github.com/wycats/thor/blob/master/lib/thor/actions/file_manipulation.rb#L103
+    def self.write_template template
+      template_dir = File.join(File.dirname(__FILE__), "templates")
+
+      source = File.join(template_dir, "#{template}.tt")
+      context = instance_eval('binding')
+
+      content = ERB.new(::File.binread(source), nil, '-', '@output_buffer').result(context)
+      open(template, 'wb') do |f|
+        f << content
+      end
+    end
+
     def self.create_padrino project_name
       cmd = "padrino g project #{project_name} -i -e erb -d activerecord -s jquery -c less"
       Kernel.system cmd
+    end
+
+    def self.extend_padrino
+      Natstrap::Utils.write_template "Gemfile"
+      Kernel.system "bundle update"
+
+      [
+        "padrino g model Entry text:text"
+      ].each {|cmd| Kernel.system cmd }
+
+      Natstrap::Utils.write_template "Rakefile"
     end
 
     def self.add_bootstrap dir

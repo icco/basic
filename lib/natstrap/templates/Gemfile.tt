@@ -9,6 +9,7 @@ gem 'rack-less'
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'therubyracer'
+gem 'thin'
 
 # Padrino Stable Gem
 gem 'padrino'

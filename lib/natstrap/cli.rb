@@ -9,6 +9,8 @@ module Natstrap
 
       FileUtils.cd prj_name, :verbose => Natstrap::DEV
 
+      Natstrap::Utils.extend_padrino
+
       # Move folders around the way I like them
       Natstrap::Utils.reorganize_public
 

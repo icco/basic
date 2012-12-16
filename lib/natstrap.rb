@@ -1,3 +1,4 @@
+require 'erb'
 require 'open-uri'
 require 'thor'
 require 'zipruby'
