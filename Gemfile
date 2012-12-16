@@ -1,25 +1,9 @@
-source :rubygems
+source 'https://rubygems.org'
 
-# Project requirements
-gem 'activerecord', :require => "active_record"
-gem 'erubis', "~> 2.7.0"
-gem 'less'
-gem 'pg'
-gem 'rack-less'
-gem 'rake'
-gem 'sinatra-flash', :require => 'sinatra/flash'
-gem 'sqlite3'
-gem 'therubyracer'
+# Specify your gem's dependencies in natstrap.gemspec
+gemspec
 
-# Test requirements
-gem 'rspec'
-gem 'rack-test', :require => "rack/test", :group => "test"
-
-# Padrino Stable Gem
-gem 'padrino', '>= 0.10.7'
-
-# For dev
+# For dev work...
 group :development do
-  gem 'heroku'
-  gem 'shotgun'
+  gem 'fog', :git => 'git://github.com/ziyadm/fog.git'
 end
