@@ -4,14 +4,20 @@ AKA, icco/basic.
 
 This is used to generate a project to work on.
 
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/icco/basic)
+
 ## Installation
 
     $ gem install natstrap
 
 ## Usage
 
-  * `natstrap new project_name` - creates a new project in a folder called project_name
-  * `natstrap launch` - launches a new GCE server
+```
+Tasks:
+  natstrap help [TASK]  # Describe available tasks or one specific task
+  natstrap launch       # Launch a new server.
+  natstrap new name     # Create a project named NAME.
+```
 
 ## Contributing
 
