@@ -1,6 +1,8 @@
 require 'thor'
 
 module Natstrap
+
+  # http://whatisthor.com/
   class CLI < Thor
     desc "new name", "Create a project named NAME."
     def new prj_name
