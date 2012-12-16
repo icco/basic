@@ -1,15 +1,22 @@
-# Basic App
+# Natstrap
 
-This is a basic sinatra app, using the [Padrino](http://padrinorb.com) framework. The app is ready for Heroku, or local deployment. It uses active_record to deal with the db, erb for templating and less for css.
+AKA, icco/basic.
 
-If you are using heroku, try creating your app with `heroku create APP_NAME -s cedar`.
+This is used to generate a project to work on.
 
-To run your site locally, run `rackup` or `shotgun`.
+## Installation
 
-## Database Stuff
+    $ gem install natstrap
 
-Add migrations by adding files to `db/migrations/` and then run `rake ar:migrate` to migrate the db.
+## Usage
 
-## Resources
+  * `natstrap new project_name` - creates a new project in a folder called project_name
+  * `natstrap launch` - launches a new GCE server
 
- * [Sinatra Documentation](http://www.sinatrarb.com/intro)
+## Contributing
+
+ 1. Fork it
+ 2. Create your feature branch (`git checkout -b my-new-feature`)
+ 3. Commit your changes (`git commit -am 'Add some feature'`)
+ 4. Push to the branch (`git push origin my-new-feature`)
+ 5. Create new Pull Request
