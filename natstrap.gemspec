@@ -8,9 +8,11 @@ Gem::Specification.new do |gem|
   gem.version       = Natstrap::VERSION
   gem.authors       = ["Nat Welch"]
   gem.email         = ["nat@natwelch.com"]
-  gem.description   = %q{A gem to create a new project for Nat.}
-  gem.summary       = %q{A gem to create a new project for Nat.}
   gem.homepage      = "http://github.com/icco/basic"
+  gem.licenses = ['MIT']
+
+  gem.summary       = %q{A gem to create a new project for Nat.}
+  gem.description   = %q{A gem to create a new project for Nat. Follows a consistent app template using padrino and bootstrap.}
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -20,10 +22,10 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "bundler"
   gem.add_runtime_dependency "git"
   gem.add_runtime_dependency "fog"
-  gem.add_runtime_dependency "padrino"
+  gem.add_runtime_dependency "padrino", "0.10.6"
+  gem.add_runtime_dependency "rake"
   gem.add_runtime_dependency "thor"
   gem.add_runtime_dependency "zipruby"
 
   gem.rdoc_options = ['--charset=UTF-8']
-  gem.licenses = ['MIT']
 end
