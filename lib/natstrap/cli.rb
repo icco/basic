@@ -7,30 +7,13 @@ module Natstrap
 
       Natstrap::Utils.create_padrino prj_name
 
-      FileUtils.cd(prj_name, :verbose => true)
+      FileUtils.cd prj_name, :verbose => Natstrap::DEV
+
+      # Move folders around the way I like them
+      Natstrap::Utils.reorganize_public
 
       # Download and extract bootstrap framework.
-      bootstrap = "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
-      open bootstrap do |data|
-        Zip::Archive.open_buffer(data.read) do |ar|
-          ar.each do |zf|
-            if zf.directory?
-              FileUtils.mkdir_p(zf.name)
-            else
-              dirname = File.dirname(zf.name)
-              FileUtils.mkdir_p(dirname) unless File.exist?(dirname)
-
-              open(zf.name, 'wb') do |f|
-                f << zf.read
-              end
-            end
-          end
-        end
-      end
-
-      # rename bootstrap to public
-      FileUtils.rm_rf 'public', :verbose => true
-      FileUtils.mv 'bootstrap', 'public', :verbose => true
+      Natstrap::Utils.add_bootstrap 'public'
     end
 
     desc "launch", "Launch a new server."
