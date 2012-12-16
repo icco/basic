@@ -31,5 +31,12 @@ module Natstrap
     def launch
       puts "Launching!"
     end
+
+    desc "version", "Show current Natstrap version."
+    map ["-v", "--version"] => :version
+    def version
+      require 'natstrap/version'
+      puts "Natstrap v#{Natstrap::VERSION}"
+    end
   end
 end
