@@ -61,5 +61,18 @@ module Natstrap
         FileUtils.mv "public/#{from}", "public/#{to}", :verbose => Natstrap::DEV
       end
     end
+
+    def self.git_init
+      g = Git.init
+      Natstrap::Utils.write_template "README.md"
+      g.add('README.md')
+      g.commit('init.')
+    end
+
+    def self.git_commit msg
+      #g = Git.open (working_dir, :log => Logger.new(STDOUT))
+      #g.add('.')
+      #g.commit_all('message')
+    end
   end
 end

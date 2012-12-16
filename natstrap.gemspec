@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_runtime_dependency "bundler"
+  gem.add_runtime_dependency "git"
   gem.add_runtime_dependency "fog"
   gem.add_runtime_dependency "padrino"
   gem.add_runtime_dependency "thor"
