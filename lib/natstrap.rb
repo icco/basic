@@ -1,6 +1,8 @@
 require 'erb'
 require 'git'
+require 'logger'
 require 'open-uri'
+require 'ostruct'
 require 'thor'
 require 'zipruby'
 

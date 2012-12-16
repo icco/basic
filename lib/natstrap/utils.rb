@@ -2,11 +2,13 @@ module Natstrap
   class Utils
 
     # Based off of https://github.com/wycats/thor/blob/master/lib/thor/actions/file_manipulation.rb#L103
-    def self.write_template template
+    def self.write_template template, opts = {}
       template_dir = File.join(File.dirname(__FILE__), "templates")
 
       source = File.join(template_dir, "#{template}.tt")
-      context = instance_eval('binding')
+
+      namespace = OpenStruct.new(opts)
+      context = namespace.instance_eval { binding }
 
       content = ERB.new(::File.binread(source), nil, '-', '@output_buffer').result(context)
       open(template, 'wb') do |f|
@@ -19,9 +21,12 @@ module Natstrap
       Kernel.system cmd
     end
 
-    def self.extend_padrino
+    def self.extend_padrino project_name
       Natstrap::Utils.write_template "Gemfile"
+
       Kernel.system "bundle update"
+
+      Natstrap::Utils.write_template "config/database.rb", :name => project_name
 
       [
         "padrino g model Entry text:text"
@@ -70,9 +75,9 @@ module Natstrap
     end
 
     def self.git_commit msg
-      #g = Git.open (working_dir, :log => Logger.new(STDOUT))
-      #g.add('.')
-      #g.commit_all('message')
+      g = Git.open(FileUtils.pwd, :log => Logger.new(STDOUT))
+      g.add('.')
+      g.commit_all(msg)
     end
   end
 end

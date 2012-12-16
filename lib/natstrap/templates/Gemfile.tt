@@ -12,10 +12,9 @@ gem 'therubyracer'
 gem 'thin'
 
 # Padrino Stable Gem
-gem 'padrino'
+gem 'padrino', '0.10.6'
 
 # For dev
 group :development do
-  gem 'heroku'
   gem 'shotgun'
 end

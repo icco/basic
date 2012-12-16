@@ -2,7 +2,7 @@
 # Database config for relational db.
 connections = {
   :development => "postgres://localhost/<%= name %>",
-  :test => "postgres://postgres@localhost/<%= name %>",
+  :test => "postgres://postgres@localhost/<%= name %>_test",
   :production => ENV['DATABASE_URL']
 }
 
