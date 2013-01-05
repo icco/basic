@@ -4,6 +4,10 @@ AKA, icco/basic.
 
 This is used to generate a project to work on.
 
+## TODO
+
+ * commonly used Rake tasks through include
+
 ## Links
 
 * [Travis][]: [![Build Status](https://secure.travis-ci.org/icco/basic.png?branch=master)][travis]
