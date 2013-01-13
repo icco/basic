@@ -17,7 +17,7 @@ module Natstrap
     end
 
     def self.create_padrino project_name
-      cmd = "padrino g project #{project_name} -i -e erb -d activerecord -s jquery -c less"
+      cmd = "padrino g project #{project_name} -i -e erb -d activerecord -s jquery -c sass"
       Kernel.system cmd
     end
 
