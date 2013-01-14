@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 1.9.3
+notifications:
+  email: false
+before_script:
+  - psql -c 'create database <%= name %>_test;' -U postgres
+  - rake ar:schema:load
+services:
+  - postgresql
