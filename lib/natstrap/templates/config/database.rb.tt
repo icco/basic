@@ -1,5 +1,6 @@
 ##
 # Database config for relational db.
+init = Time.now
 connections = {
   :development => "postgres://localhost/<%= name %>",
   :test => "postgres://postgres@localhost/<%= name %>_test",
@@ -43,7 +44,7 @@ if connections[Padrino.env]
   end
 
   # Log what we are connecting to.
-  logger.push " DB: #{options.inspect}", :devel
+  logger.bench "DB", init, "#{options.inspect}", :devel, :green
 
   ActiveRecord::Base.establish_connection(options)
 else
