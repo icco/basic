@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "bundler"
   gem.add_runtime_dependency "git"
   gem.add_runtime_dependency "fog"
-  gem.add_runtime_dependency "padrino", "0.11.1"
+  gem.add_runtime_dependency "padrino", "0.11.2"
   gem.add_runtime_dependency "rake"
   gem.add_runtime_dependency "thor"
   gem.add_runtime_dependency "zipruby"
