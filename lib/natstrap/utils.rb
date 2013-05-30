@@ -27,6 +27,7 @@ module Natstrap
       Kernel.system "bundle update"
 
       Natstrap::Utils.write_template "config/database.rb", :name => project_name
+      Natstrap::Utils.write_template "config/apps.rb", :name => project_name
 
       [
         "padrino g model Entry text:text"
